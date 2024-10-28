@@ -1,9 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.verficicador;
 
+/**
+ *
+ * @author andih
+ */
+import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -22,6 +23,8 @@ public class AnalizadorCadenas extends JFrame {
         setSize(500, 400);
         setLocationRelativeTo(null);
 
+        iniciadorFlatlaf();
+        
         // Componentes
         JPanel panelSuperior = new JPanel(new BorderLayout(5, 5));
         txtEntrada = new JTextField();
@@ -42,6 +45,14 @@ public class AnalizadorCadenas extends JFrame {
         btnAnalizar.addActionListener(e -> analizarCadena());
     }
 
+ private void iniciadorFlatlaf(){
+        try {
+            UIManager.setLookAndFeel( new FlatLightLaf() );
+}       catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
+}
+    }
+ 
     private void analizarCadena() {
         String cadena = txtEntrada.getText();
         List<String> errores = new ArrayList<>();
