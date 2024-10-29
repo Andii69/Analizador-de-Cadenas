@@ -4,24 +4,19 @@ package org.verficicador;
  *
  * @author andih
  */
-import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.formdev.flatlaf.FlatDarkLaf;
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AnalizadorCadenas extends JFrame {
-    private JTextField txtEntrada;
-    private JTextArea txtResultado;
-    private JButton btnAnalizar;
-    private JButton btnLimpiar;
-    private JButton btnSalir;
+    private final JTextField txtEntrada;
+    private final JTextArea txtResultado;
+    private final JButton btnAnalizar;
+    private final JButton btnLimpiar;
+    private final JButton btnSalir;
 
     public AnalizadorCadenas() {
         setTitle("Analizador de Cadenas");
@@ -80,7 +75,6 @@ public class AnalizadorCadenas extends JFrame {
         boton.setFocusPainted(false);
         boton.setBorderPainted(true);
 
-        int radius = 6;
         boton.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(Color.GRAY, 1),
             BorderFactory.createEmptyBorder(4, 8, 4, 8)
@@ -89,6 +83,7 @@ public class AnalizadorCadenas extends JFrame {
         boton.putClientProperty("JButton.buttonType", "roundRect");
 
         boton.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 boton.setBackground(new Color(70, 73, 75));
                 boton.setBorder(BorderFactory.createCompoundBorder(
@@ -97,6 +92,7 @@ public class AnalizadorCadenas extends JFrame {
                 ));
             }
 
+            @Override
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 boton.setBackground(new Color(60, 63, 65));
                 boton.setBorder(BorderFactory.createCompoundBorder(
