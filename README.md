@@ -69,7 +69,7 @@ private void analizarCadena()
 - Propósito: Método principal que realiza el análisis de la cadena ingresada
 - Proceso de análisis:
   - Obtiene la cadena del campo de entrada
-  - Si la cadena está vacía, se considera válida y muestra el mensaje correspondiente
+  - Si la cadena está vacía, se considera NO válida y muestra el mensaje correspondiente
   - Si no está vacía:
     - Verifica si termina en punto
     - Verifica que no contenga espacios entre palabras
@@ -156,7 +156,7 @@ public static void main(String[] args)
 ## Reglas de Validación
 
 ### Para Todas las Cadenas
-- Las cadenas vacías son válidas
+- Las cadenas vacías NO son válidas
 - Si no están vacías
   - Deben terminar en punto
   - No pueden contener caracteres especiales no permitidos
