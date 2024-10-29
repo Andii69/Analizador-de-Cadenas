@@ -122,10 +122,10 @@ public class AnalizadorCadenas extends JFrame {
         boolean esValida = true;
 
         if (cadena.isEmpty()) {
-            mostrarResultado("Cadena vacía, la cadena es válida");
+            mostrarResultado("Cadena vacía, la cadena NO es válida");
             return;
         }
-
+        
         if (!cadena.endsWith(".")) {
             errores.add("La cadena debe terminar con un punto (.)");
             esValida = false;
