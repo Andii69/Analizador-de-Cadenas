@@ -66,7 +66,63 @@ private void limpiarCampos()
 ```java
 private void analizarCadena()
 ```
-[El resto de la documentación del método analizarCadena() y los métodos auxiliares permanece igual]
+- **Propósito**: Método principal que realiza el análisis de la cadena ingresada
+- **Proceso de análisis**:
+  1. Obtiene la cadena del campo de entrada
+  2. Verifica si está vacía
+  3. Verifica si termina en punto
+  4. Analiza si es numérica o texto
+  5. Verifica caracteres especiales
+  6. Realiza validaciones específicas según el tipo de cadena
+
+##### Validaciones para Cadenas Numéricas:
+- Debe contener solo dígitos
+- Puede tener una única coma decimal
+- La coma no puede estar al inicio o final
+- Debe haber dígitos antes y después de la coma
+
+##### Validaciones para Cadenas de Texto:
+- Primera letra debe ser mayúscula
+- Resto de letras deben ser minúsculas
+- Reglas específicas para consonantes y vocales repetidas:
+  - Se permiten 'll' y 'cc'
+  - Se permite 'oo'
+  - No se permiten otras repeticiones
+
+#### `esVocal(char c)`
+```java
+private boolean esVocal(char c)
+```
+- **Propósito**: Determina si un carácter es una vocal
+- **Parámetros**: `c` - carácter a evaluar
+- **Retorno**: `true` si es vocal, `false` si no lo es
+- **Comportamiento**: Convierte el carácter a minúscula y verifica si es a, e, i, o, u
+
+#### `esConsonante(char c)`
+```java
+private boolean esConsonante(char c)
+```
+- **Propósito**: Determina si un carácter es una consonante
+- **Parámetros**: `c` - carácter a evaluar
+- **Retorno**: `true` si es consonante, `false` si no lo es
+- **Comportamiento**: Verifica que sea una letra y no sea vocal
+
+#### `mostrarResultado(String mensaje)`
+```java
+private void mostrarResultado(String mensaje)
+```
+- **Propósito**: Muestra el resultado del análisis en el área de texto
+- **Parámetros**: `mensaje` - resultado del análisis
+- **Comportamiento**: Actualiza el contenido del área de texto con el mensaje
+
+### Método Principal
+```java
+public static void main(String[] args)
+```
+- **Propósito**: Punto de entrada de la aplicación
+- **Comportamiento**: 
+  - Utiliza `SwingUtilities.invokeLater()` para asegurar que la interfaz se cree en el EDT (Event Dispatch Thread)
+  - Crea y muestra una instancia de AnalizadorCadenas
 
 ## Interfaz de Usuario
 
@@ -95,7 +151,6 @@ private void analizarCadena()
 - Utiliza BorderFactory para crear bordes compuestos y padding
 
 ## Reglas de Validación
-[Las reglas de validación permanecen iguales a la documentación original]
 
 ### Para Todas las Cadenas
 - No pueden estar vacías
