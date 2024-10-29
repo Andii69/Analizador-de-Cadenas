@@ -14,6 +14,7 @@ public class AnalizadorCadenas extends JFrame {
     private JTextField txtEntrada;
     private JTextArea txtResultado;
     private JButton btnAnalizar;
+    private JButton btnLimpiar;
 
     public AnalizadorCadenas() {
         // Configuración de la ventana
@@ -33,6 +34,13 @@ public class AnalizadorCadenas extends JFrame {
         panelSuperior.add(txtEntrada, BorderLayout.CENTER);
         panelSuperior.add(btnAnalizar, BorderLayout.EAST);
 
+        // Panel para botones
+        JPanel panelBotones = new JPanel(new GridLayout(2, 1, 5, 5));
+        btnLimpiar = new JButton("Limpiar");
+        panelBotones.add(btnAnalizar);
+        panelBotones.add(btnLimpiar);
+        panelSuperior.add(panelBotones, BorderLayout.EAST);
+
         txtResultado = new JTextArea();
         txtResultado.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(txtResultado);
@@ -41,18 +49,28 @@ public class AnalizadorCadenas extends JFrame {
         add(panelSuperior, BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
 
-        // Configurar acción del botón
+        // Configurar acción del botón analizar
         btnAnalizar.addActionListener(e -> analizarCadena());
+        
+        // Configurar acción del botón limpiar
+        btnLimpiar.addActionListener(e -> limpiarCampos());
     }
 
- private void iniciadorFlatlaf(){
+    private void iniciadorFlatlaf(){
         try {
             UIManager.setLookAndFeel( new FlatLightLaf() );
-}       catch( Exception ex ) {
+        } catch( Exception ex ) {
             System.err.println( "Failed to initialize LaF" );
-}
+        }
     }
- 
+    
+    // Nuevo método para limpiar los campos
+    private void limpiarCampos() {
+        txtEntrada.setText("");
+        txtResultado.setText("");
+        txtEntrada.requestFocus();
+    }
+
     private void analizarCadena() {
         String cadena = txtEntrada.getText();
         List<String> errores = new ArrayList<>();
