@@ -134,6 +134,11 @@ public class AnalizadorCadenas extends JFrame {
         String cadenaAnalizar = cadena.endsWith(".") ? 
             cadena.substring(0, cadena.length() - 1) : cadena;
 
+        if (cadenaAnalizar.contains(" ")) {
+            errores.add("No se permiten espacios en la cadena");
+            esValida = false;
+        }
+
         boolean esNumerica = true;
         boolean esTexto = true;
         boolean tieneCaracteresEspeciales = false;
@@ -142,7 +147,7 @@ public class AnalizadorCadenas extends JFrame {
         for (int i = 0; i < cadenaAnalizar.length(); i++) {
             char c = cadenaAnalizar.charAt(i);
 
-            if (!Character.isLetterOrDigit(c) && c != ',' && c != ';' && c != ':' && c != ' ') {
+            if (!Character.isLetterOrDigit(c) && c != ',' && c != ';' && c != ':') {
                 tieneCaracteresEspeciales = true;
             }
 
@@ -164,7 +169,7 @@ public class AnalizadorCadenas extends JFrame {
                 }
             }
 
-            if (!Character.isLetter(c) && c != ',' && c != ';' && c != ':' && c != ' ') {
+            if (!Character.isLetter(c) && c != ',' && c != ';' && c != ':') {
                 esTexto = false;
             }
         }
@@ -228,7 +233,6 @@ public class AnalizadorCadenas extends JFrame {
         }
         mostrarResultado(resultado.toString());
     }
-
     private boolean esVocal(char c) {
         char letra = Character.toLowerCase(c);
         return letra == 'a' || letra == 'e' || letra == 'i' || 
