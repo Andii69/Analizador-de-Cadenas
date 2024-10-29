@@ -122,7 +122,7 @@ public class AnalizadorCadenas extends JFrame {
         boolean esValida = true;
 
         if (cadena.isEmpty()) {
-            mostrarResultado("Error: La cadena está vacía");
+            mostrarResultado("Cadena vacía, la cadena es válida");
             return;
         }
 
