@@ -6,7 +6,6 @@ package org.verficicador;
  */
 import javax.swing.*;
 import java.awt.*;
-
 import com.formdev.flatlaf.FlatDarkLaf;
 import java.util.ArrayList;
 import java.util.List;
