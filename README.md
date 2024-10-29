@@ -157,10 +157,10 @@ public static void main(String[] args)
 
 ### Para Todas las Cadenas
 - Las cadenas vacías son válidas
-- No pueden estar vacías
-- Deben terminar en punto
-- No pueden contener caracteres especiales no permitidos
-- No pueden contener espacios entre palabras
+- Si no están vacías
+  - Deben terminar en punto
+  - No pueden contener caracteres especiales no permitidos
+  - No pueden contener espacios entre palabras
 
 ### Para Cadenas Numéricas
 - Solo pueden contener dígitos y máximo una coma decimal
