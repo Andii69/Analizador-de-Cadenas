@@ -66,14 +66,16 @@ private void limpiarCampos()
 ```java
 private void analizarCadena()
 ```
-- **Propósito**: Método principal que realiza el análisis de la cadena ingresada
-- **Proceso de análisis**:
-  1. Obtiene la cadena del campo de entrada
-  2. Verifica si está vacía
-  3. Verifica si termina en punto
-  4. Analiza si es numérica o texto
-  5. Verifica caracteres especiales
-  6. Realiza validaciones específicas según el tipo de cadena
+- Propósito: Método principal que realiza el análisis de la cadena ingresada
+- Proceso de análisis:
+  - Obtiene la cadena del campo de entrada
+  - Si la cadena está vacía, se considera válida y muestra el mensaje correspondiente
+  - Si no está vacía:
+    - Verifica si termina en punto
+    - Verifica que no contenga espacios entre palabras
+    - Analiza si es numérica o texto
+    - Verifica caracteres especiales
+    - Realiza validaciones específicas según el tipo de cadena
 
 ##### Validaciones para Cadenas Numéricas:
 - Debe contener solo dígitos
@@ -84,6 +86,7 @@ private void analizarCadena()
 ##### Validaciones para Cadenas de Texto:
 - Primera letra debe ser mayúscula
 - Resto de letras deben ser minúsculas
+- No se permiten espacios entre palabras
 - Reglas específicas para consonantes y vocales repetidas:
   - Se permiten 'll' y 'cc'
   - Se permite 'oo'
@@ -153,9 +156,11 @@ public static void main(String[] args)
 ## Reglas de Validación
 
 ### Para Todas las Cadenas
+- Las cadenas vacías son válidas
 - No pueden estar vacías
 - Deben terminar en punto
 - No pueden contener caracteres especiales no permitidos
+- No pueden contener espacios entre palabras
 
 ### Para Cadenas Numéricas
 - Solo pueden contener dígitos y máximo una coma decimal
